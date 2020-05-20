@@ -7,6 +7,7 @@ total_Salary=0;
 empperhour=20;
 numberofworkingDays=20;
 
+echo "using case switch "
 for (( day=1; day<=$numberofworkingDays; day++ ))
 do
   empCheck=$((RANDOM%3));
