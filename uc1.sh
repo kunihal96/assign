@@ -30,6 +30,7 @@ for (( day=1; day<=$numberofworkingDays; day++ ))
 do
   empCheck=$((RANDOM%3));
   workhrs $empcheck
+  daywage=$(($emphrs*$empperhour))
   totalworkinghours=$(($totalworkinghours+$emphrs));
   dailywage=$(($totalworkinghours+$emphrs));
    if (($totalworkinghours > 100))
@@ -43,3 +44,4 @@ do
 done
 echo "total salary is: "$totalsalary
 echo "total working hour :"$totalworkinghours
+echo "daily wage of worker :"$daywage
