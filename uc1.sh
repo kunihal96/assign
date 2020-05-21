@@ -31,7 +31,7 @@ do
   empCheck=$((RANDOM%3));
   workhrs $empcheck
   totalworkinghours=$(($totalworkinghours+$emphrs));
-
+  dailywage=$(($totalworkinghours+$emphrs));
    if (($totalworkinghours > 100))
      then
       echo "working hours exceeding 100"
