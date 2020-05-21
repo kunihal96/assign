@@ -7,23 +7,30 @@ total_Salary=0;
 empperhour=20;
 numberofworkingDays=20;
 
+echo "using function"
+function workhrs() {
+
+ case $empCheck in
+        $Full_Time)
+             emphrs=8
+                ;;
+        $Part_Time)
+             emphrs=4
+                ;;
+        *)
+        emphrs=0
+                ;;
+
+ esac
+ return $emphrs
+}
+
 echo "using case switch "
 for (( day=1; day<=$numberofworkingDays; day++ ))
 do
   empCheck=$((RANDOM%3));
-     case $empCheck in 
-	$Full_Time)
-             emphrs=8
-		;;
-	$Part_Time)
-	     emphrs=4
-		;;
-	*)
-	emphrs=0
-		;;
-
-     esac
-      totalworkinghours=$(($totalworkinghours+$emphrs));
+  workhrs $empcheck
+  totalworkinghours=$(($totalworkinghours+$emphrs));
 
    if (($totalworkinghours > 100))
      then
