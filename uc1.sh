@@ -23,8 +23,16 @@ do
 		;;
 
      esac
+      totalworkinghours=$(($totalworkinghours+$emphrs));
 
+   if (($totalworkinghours > 100))
+     then
+      echo "working hours exceeding 100"
+     break;
+   fi
       salary=$(($emphrs*$empperhour));
       totalsalary=$(($totalsalary+$salary))
+
 done
-echo $totalsalary
+echo "total salary is: "$totalsalary
+echo "total working hour :"$totalworkinghours
